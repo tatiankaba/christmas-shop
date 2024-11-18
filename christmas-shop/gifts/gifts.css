@@ -342,15 +342,15 @@ h3 {
     gap: 4.8px;
 }
 
-.tab a {
-    display: block;
-}
 
 .tab {
     flex-basis: 1;
+    border-radius: 12px;
+    transition: all 0.5s;
 }
 
 .tab a {
+    display: block;
     padding: 12px 20px;
     color: var(--Static-White);
     font-family: Montserrat;
@@ -359,21 +359,23 @@ h3 {
     line-height: 15.6px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    border-radius: 20px;
+    border-radius: 12px;
+    transition: all 0.5s;
 }
 
 div.tab.disable {
-    background-color: none;
-    border-radius: 20px;
+    border-radius: 12px;
+    background-color:  rgba(255, 255, 255, 0.1);
 }
 
 
-div.tab.disable  a{
-    background-color:  rgba(255, 70, 70, 0.1);
+.tab.disable {
+    background-color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
 }
 
 .tab:hover {
-    background-color:  rgba(255, 70, 70, 0.1);
-    transition: all 0.5ms;
+    background-color:  rgba(255, 255, 255, 0.1);
+    transition: all 0.5s;
 }
+
