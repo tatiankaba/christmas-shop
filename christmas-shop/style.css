@@ -1,0 +1,251 @@
+:root {
+    --Primary: rgba(255, 70, 70, 1);
+    --Dark: rgba(24, 28, 41, 1);
+
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+body {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 1440px; 
+   margin: 0 auto; 
+   background-color: rgba(255, 70, 70, 1);
+}
+
+main {
+    background-color: rgba(255, 70, 70, 1);
+}
+
+.hero {
+    background: url(images/bg-snow.png) center center/cover no-repeat,
+     url(images/bg-ball.png) center center/cover no-repeat;
+     padding: 60px 0;
+}
+
+.hero_text {
+    margin: 0 auto;
+    padding: 60px 0;
+    max-width: 426px;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-size:32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 18%;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.caption {
+    font-family: Allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height:  100%;
+    letter-spacing:  5%;
+    color: white;
+    text-align: center;
+}
+
+.hero_caption {
+    margin-top: 12px;
+}
+
+.btn {
+    width: 235px;
+    height: 56px;
+    padding: 20px 32px;
+    border-radius: 20px;
+    opacity: 0px;
+    background-color: rgba(24, 28, 41, 1);
+    outline: none;
+    border: none;
+    color: white;
+    margin: 0 auto;
+    margin-top: 12px;
+    display: block;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.6px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.btn:hover {
+    background-color:white;
+    color: rgba(24, 28, 41, 1);
+    transition: all 1s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 12px 82px;
+}
+
+nav {
+    display: flex;
+}
+
+.logo_image {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.logo {
+    padding: 20px 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.logo_slogan {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height:  130%;
+    letter-spacing:  5%;
+    text-transform: uppercase;
+    color: rgba(24, 28, 41, 1);
+}
+
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height:  130%;
+    letter-spacing:  5%;
+    text-transform: uppercase;
+    color: rgba(24, 28, 41, 1);
+    transition: all 0.5s;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 70, 70, 0.1);
+    color: rgba(255, 70, 70, 1);
+    transition: all 0.5s;
+}
+
+.about {
+    padding: 60px 82px;
+    background: url(images/bg-snow.png) center center/cover no-repeat;
+}
+
+.about_caption {
+    color: var(--Primary);
+    text-align: left;
+}
+
+.about_block {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.about_block_text {
+    padding: 100px 0 100px 60px;
+}
+
+.about_block_text_content {
+    max-width: 426px;
+    padding: 60px 0;
+}
+
+.about_block_paragraph {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.68px;
+    text-align: left;
+    margin-top: 20px;
+    color: var(--Dark)
+}
+
+.about_h2 {
+    margin-top: 20px;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height:  152%;
+    letter-spacing:  16%;
+    text-transform: uppercase;
+    color: var(--Dark)
+}
+
+.about_block img {
+    border-radius: 10px;
+}
+
+.slider {
+    padding: 60px 82px;
+}
+.slider_title {
+    color: white;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.slider_item {
+    flex-shrink: 0;
+}
+
+.slider_item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.slider_carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
