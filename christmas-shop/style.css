@@ -127,7 +127,7 @@ nav {
 }
 
 .logo {
-    padding: 20px 8px;
+    padding:8px 20px;
     cursor: pointer;
     display: flex;
     gap: 8px;
