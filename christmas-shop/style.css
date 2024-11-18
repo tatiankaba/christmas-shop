@@ -18,6 +18,9 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 
 a {
     text-decoration: none;
@@ -283,17 +286,18 @@ h2 {
 .slider_arrow:hover {
     border-color: var(--Static-White-40);
     transition: all 0.5s;
+    background-color: white;
 }
 
 .slider_arrow:hover svg path {
-    stroke:  white;
+    stroke:  var(--Primary);
     transition: all 0.5s;
   }
 
-.slider_arrow:hover svg path {
-    stroke:  var(--Static-White-40);
-    transition: all 0.5s;
+  .slider-arrow:disabled {
+    stroke: var(--Static-White-40);
   }
+
 
 .best_gifts {
     padding: 60px 82px;
@@ -321,6 +325,12 @@ h2 {
     flex-direction: column;
     justify-content: stretch;
     cursor: pointer;
+    color: var(--Dark)
+}
+
+.card:hover .card_desc {
+    color: var(--Primary);
+    transition: all 0.5s;
 }
 
 .img_container {
@@ -375,6 +385,7 @@ h3 {
 
 .card_desc {
     margin-top: 8px;
+    transition: all 0.5s;
 }
 
 .CTA {
@@ -451,6 +462,92 @@ h3 {
     height: 20px;
     width: 1px;
     background-color: var(--Static-White)
+}
+
+.gifts {
+    padding: 60px 82px;
+}
+
+.gifts {
+    background-color: white;
+    padding: 60px 82px;
+}
+
+.gifts_items {
+    display: flex;
+    column-gap: 12px;
+    max-width: 1276px;
+}
+
+.gift_item {
+    background-color: var(--Content-Background);
+    flex: 1;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px 0;
+    color: var(--Dark);
+    transition: all 0.5s;
+}
+
+.gift_item:hover .gift_item_text, .gift_item:hover .gift_invite {
+    color: var(--Primary);
+    transition: all 0.5s;
+}
+
+.gift_item img {
+    display: block;
+    margin: 0 auto;
+}
+
+.gift_item a, .gift_item_text {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36.48px;
+    letter-spacing: 0.16em;
+    text-align: center;
+    margin-top: 12px;
+    transition: all 0.5s;
+}
+
+.gift_invite {
+    margin-top: 12px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24.32px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+footer {
+    background-color: white;
+    padding: 0 82px 60px 82px;
+    text-align: center;
+}
+
+.footer_caption {
+    color: var(--Dark);
+    margin-top: 12px;
+    display: block;
+}
+
+.copyright {
+    margin-top: 12px;
+}
+
+.socials {
+    width: 196px;
+    display: flex;
+    margin: 0 auto;
+    column-gap: 12px;
+    align-items: center;
+}
+
+.socials a {
+    width: 40px;
+    height: 40px;
 }
 
 
