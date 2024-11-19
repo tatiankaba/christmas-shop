@@ -586,6 +586,25 @@ footer {
     text-align: center;
 }
 
+.caption.footer_caption {
+    color: var(--Dark);
+    transition: all 0.5s;
+}
+
+.caption.footer_caption:hover {
+    color: var(--Primary);
+    transition: all 0.5s;
+}
+
+.socials a svg path {
+    transition: all 0.5s;
+}
+
+.socials a:hover svg path {
+    stroke:  var(--Primary);
+    transition: all 0.5s;
+}gi
+
 
 
 
