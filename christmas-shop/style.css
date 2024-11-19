@@ -312,8 +312,13 @@ h2 {
     transition: all 0.5s;
   }
 
-  .slider-arrow:disabled {
+  div.slider_arrow.disable svg path {
     stroke: var(--Static-White-40);
+  }
+
+  div.slider_arrow.disable {
+    pointer-events: none;
+    border-color: var(--Static-White-40);
   }
 
 
@@ -604,8 +609,4 @@ footer {
 .socials a:hover svg path {
     stroke:  var(--Primary);
     transition: all 0.5s;
-}gi
-
-
-
-
+}
