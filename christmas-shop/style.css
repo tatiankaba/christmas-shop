@@ -99,7 +99,8 @@ h1 {
     text-transform: uppercase;
 }
 
-.btn a {
+a.btn {
+    
     color: white;
     transition: all 1s;
     display: block;
