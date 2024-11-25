@@ -519,6 +519,17 @@ div.tab.disable {
 
   }
 
+
+  @media (max-width:600px) {
+    .headline {
+        background: url(../images/bg-garland.png) center center/cover no-repeat;
+        background-size: contain, contain;
+        background-position: center calc(50% - 70px); 
+      }
+
+  }
+
+
   @media (max-width:460px) {
     .tab a {
         padding: 12px 8px;
@@ -534,7 +545,6 @@ div.tab.disable {
         background: url(../images/bg-garland.png) center center/cover no-repeat;
         background-size: contain, contain;
         background-position: center calc(50% - 125px); 
-
       }
   }
 
