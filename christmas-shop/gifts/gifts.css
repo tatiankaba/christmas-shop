@@ -94,7 +94,7 @@ header {
     font-size: 12px;
     font-weight: 600;
     line-height:  15.6px;
-    letter-spacing:  5%;
+    letter-spacing:  0.5px;
     text-transform: uppercase;
     color: var(--Dark);
 }
@@ -370,6 +370,11 @@ div.tab.disable {
     pointer-events: none;
 }
 
+.menu_burger {
+    display: none;
+}
+
+
 
 
 @media (hover: hover) {
@@ -422,3 +427,73 @@ div.tab.disable {
     }
 
 }
+    
+
+
+@media (max-width: 998px) {
+    .about,   .header , .slider, .best_gifts, .gifts  {
+      padding-inline: 1.04vw;
+    }
+
+    .slider, .best_gifts {
+        padding-top: 60px;
+    }
+    .about_block_text {
+        padding-inline: clamp(20px, 60px, 152px);
+        padding-block: clamp(20px, 46px, 100px);
+    }
+
+    .gifts_items {
+        flex-wrap: wrap;
+    }
+
+  }
+
+
+  @media (max-width: 768px) {
+
+    nav {
+        display: none;
+    }
+
+
+    header {
+        padding-inline: 8px;
+    }
+
+
+    .gifts_items {
+        flex-direction: column;
+    }
+
+    .gift_items {
+        flex-basis: 100%;
+    }
+
+    .socials {
+        margin-top: 5px;
+    }
+
+    .menu_burger {
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding: 15px 10px;
+    }
+
+    .menu_divider {
+        background-color: var(--Dark);
+        width: 20px;
+        height: 2px;
+        cursor: pointer;
+
+    }
+
+    .menu_divider:last-child {
+        margin-top: 6px;
+    }
+
+  }
+
+
+
