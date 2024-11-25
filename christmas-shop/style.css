@@ -164,10 +164,13 @@ nav ul {
     display: flex;
     justify-content: stretch;
     border-radius: 20px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .about_block_text {
-    padding: 100px 152px 100px 60px;
+    padding: 100px clamp(152px, 60px,20px) 100px 60px;
+    flex-basis: 50%;
 }
 
 .about_block_text_content {
@@ -205,9 +208,13 @@ h2 {
     object-fit: cover;
     border-radius: 20px;
     width: 100%; 
-  height: 100%;
+    height: 100%;
 }
 
+.about_santa_img {
+    min-width: 354px;
+    flex-basis: 50%;
+}
 
 .slider {
     padding: 55px 82px 60px 82px;
@@ -457,9 +464,9 @@ h3 {
 
 .gifts_items {
     display: flex;
-    column-gap: 12px;
+    gap: 12px;
     max-width: 1276px;
-    justify-content: center;
+    margin: 0 auto;
 }
 
 .gift_item {
@@ -477,6 +484,7 @@ h3 {
 .gift_item img {
     display: block;
     margin: 0 auto;
+    max-width: 100%; 
 }
 
 .gift_item a, .gift_item_text {
