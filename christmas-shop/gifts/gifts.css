@@ -475,8 +475,12 @@ div.tab.disable {
 
 
 @media (max-width: 998px) {
-   .header , .cards_container, .gifts  {
+   .header , .gifts  {
       padding-inline: 1.04vw;
+    }
+
+    .cards_container {
+        padding-inline: 30px;
     }
 
     .slider, .best_gifts {
@@ -551,6 +555,10 @@ div.tab.disable {
 
     .menu_divider:last-child {
         margin-top: 6px;
+    }
+
+    .cards_container {
+        padding-inline: 8px;
     }
 
   }
