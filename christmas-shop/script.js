@@ -126,3 +126,53 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 
 updateCountdown();
+
+// choose random cards
+
+function getRandomCards(gifts) {
+    const randomIndexes = [];
+    while (randomIndexes.length < 4) {
+        const randIndex = Math.floor(Math.random() * gifts.length);
+        if (!randomIndexes.includes(randIndex)) {
+            randomIndexes.push(randIndex);
+        }
+    }
+    return randomIndexes.map(index => gifts[index]);
+}
+
+function displayRandomCards(gifts) {
+    const cardsContainer = document.querySelector('.cards_container');
+    const randomCards = getRandomCards(gifts);
+    randomCards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card');
+        let cardTitleClass = '';
+        if (card.category === 'For Health') {
+            cardTitleClass = 'health';
+        } else if(card.category === 'For Work') {
+            cardTitleClass = 'work';
+        } else if(card.category === 'For Harmony') {
+            cardTitleClass = 'harmony';
+        };
+        cardElement.innerHTML = `
+            <div class="img_container">
+                <img src="images/gift-for-work.png" alt="pic">
+            </div>
+            <div class="card_text">
+                <h4 class="for_what ${cardTitleClass}">${card.category}</h4>
+                <h3 class="card_desc">${card.name}</h3>
+            </div>
+        `;
+        
+        cardsContainer.appendChild(cardElement);
+    });
+}
+fetch('gifts.json')
+    .then(response => response.json())
+    .then(gifts => {
+        displayRandomCards(gifts);
+    })
+    .catch(error => {
+        console.error('Ошибка при загрузке данных:', error);
+    });
+
