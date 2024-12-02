@@ -10,23 +10,7 @@ const sliderLine = document.querySelector('.slider_carousel');
 const sliderItemsArray = document.getElementsByClassName('slider_item');
 const sliderPrevBtn =  document.querySelector('.prev');
 const sliderNextBtn =  document.querySelector('.next');
-let offset = 0;
-let numberOfCounts = 3;
 
-const mediaQuery768 = window.matchMedia("(max-width: 768px)");
-
-function changeNumberOfCounts() {
-    if (mediaQuery768.matches) {
-        numberOfCounts = 6;
-    } else {
-        numberOfCounts = 3; 
-}}
-
-
-changeNumberOfCounts();
-
-
-mediaQuery768.addEventListener("change", changeNumberOfCounts);
 
 // add burger-menu animation
 
@@ -39,10 +23,26 @@ function changeBurgerMenu() {
 burgerBtn.addEventListener('click', changeBurgerMenu);
 
 menuLinks.forEach(link => {
-    link.addEventListener("click",changeBurgerMenu)
+    link.addEventListener('click',changeBurgerMenu)
 });
 
 // add interactivity to slider
+
+let offset = 0;
+let numberOfClickCounts = 3;
+
+const mediaQuery768 = window.matchMedia('(max-width: 768px)');
+
+function changeNumberOfCounts() {
+    if (mediaQuery768.matches) {
+        numberOfClickCounts = 6;
+    } else {
+        numberOfClickCounts = 3; 
+}}
+
+changeNumberOfCounts();
+
+mediaQuery768.addEventListener('change', changeNumberOfCounts);
 
 function calcSliderItemsWidth() {
     let width = 0;
@@ -72,25 +72,22 @@ window.addEventListener('resize', fixSliderWhileResizing);
 calcSliderLineWidth();
 calcSliderItemsWidth();
 
-
-
 function slideNext() {
     sliderPrevBtn.classList.remove('disable')
-    offset += ((calcSliderItemsWidth() - calcSliderLineWidth())/numberOfCounts)
+    offset += ((calcSliderItemsWidth() - calcSliderLineWidth())/numberOfClickCounts)
     sliderLine.style.right = offset + 'px';
     console.log(calcSliderLineWidth())
     console.log(calcSliderItemsWidth())
     if (offset >= (calcSliderItemsWidth() - calcSliderLineWidth()) - 10) {
         sliderNextBtn.classList.add('disable');
     }
-    console.log(offset)
 }
 
 function slidePrev() {
     sliderNextBtn.classList.remove('disable');
-    offset -=  ((calcSliderItemsWidth() - calcSliderLineWidth())/numberOfCounts)
+    offset -=  ((calcSliderItemsWidth() - calcSliderLineWidth())/numberOfClickCounts)
     sliderLine.style.right = offset + 'px';
-    if (offset <= ((calcSliderItemsWidth() - calcSliderLineWidth())/numberOfCounts) - 40) {
+    if (offset <= ((calcSliderItemsWidth() - calcSliderLineWidth())/numberOfClickCounts) - 40) {
         sliderPrevBtn.classList.add('disable');
     }
 };
@@ -99,3 +96,33 @@ function slidePrev() {
 sliderPrevBtn.addEventListener('click', slidePrev);
 sliderNextBtn.addEventListener('click', slideNext);
 
+// timer
+
+function formatNumber(num) {
+    return num < 10 ? '0' + num : num;
+}
+
+function updateCountdown() {
+    const now = new Date();
+    const currentTimeInUTC = new Date(now.toUTCString());
+    const targetDate = new Date(Date.UTC(new Date().getUTCFullYear() + 1, 0, 1, 0, 0, 0)); 
+    const remainingTime = targetDate - currentTimeInUTC;
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = formatNumber(days);
+    document.getElementById('hours').textContent = formatNumber(hours);
+    document.getElementById('minutes').textContent = formatNumber(minutes);
+    document.getElementById('seconds').textContent = formatNumber(seconds);
+
+    if (remainingTime <= 0) {
+        document.getElementById('countdown').innerHTML = "Happy New Year!";
+        document.getElementById('countdown').classList.add('time_arrived')
+    }
+}
+
+setInterval(updateCountdown, 1000);
+
+updateCountdown();

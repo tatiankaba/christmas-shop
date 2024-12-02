@@ -455,6 +455,14 @@ h3 {
     flex-basis: 1;
 }
 
+.time_arrived {
+    background-color: var(--Primary);
+    color: var(--Static-White);
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+}
 
 .divider {
     height: 20px;
