@@ -380,6 +380,7 @@ h3 {
     display: none;
 }
 
+
 .CTA {
     background: url(images/bg-snow.png) center center/cover no-repeat,
     url(images/bg-forest.png) center center/cover no-repeat;
@@ -695,8 +696,46 @@ footer {
 
   @media (max-width: 768px) {
 
+    .active .menu_divider:first-child {
+        transform: rotate(45deg);
+        translate: 50% 50%;
+    }
+
+    .active .menu_divider:last-child {
+        transform: rotate(-45deg);
+        translate: 50% 50%;
+    }
+
+    header {
+        position: relative;
+    }
+
     nav {
-        display: none;
+        position: fixed;
+        right: 0;
+        top: 55px;
+        background-color: white;
+        transition: all linear 0.5s;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 100vh;
+        align-items:center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    nav.hidden {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 55px;
+        right: -100%;
     }
     .about {
       padding-inline: 8px; 
@@ -719,14 +758,13 @@ footer {
         width: 40px;
         height: 40px;
         padding: 15px 10px;
+        cursor: pointer;
     }
 
     .menu_divider {
         background-color: var(--Dark);
         width: 20px;
         height: 2px;
-        cursor: pointer;
-
     }
 
     .menu_divider:last-child {
