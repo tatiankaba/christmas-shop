@@ -1,12 +1,7 @@
 'use strict';
 
-const mediaQueryList = window.matchMedia("(max-width: 768px)");
 
-function showAlert() {
-
-}
-
-mediaQueryList.addEventListener("change", showAlert);
+document.addEventListener('DOMContentLoaded', () => {
 
 //constants
 
@@ -16,6 +11,15 @@ const burgerMenu = document.querySelector('nav');
 const menuLinks = Array.from(document.getElementsByClassName('menu_link'));
 const tabs = document.querySelectorAll('.tabs .tab');
 const cardsContainer = document.querySelector('.cards_container');
+
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('modal_close');
+const modalName = document.getElementById('modal_name');
+const modalDescription = document.getElementById('modal_description');
+const modalSuperpowers = document.getElementById('modal_superpowers');
+
+const mediaQueryList = window.matchMedia("(max-width: 768px)");
+
 
 // add burger-menu animation
 function changeBurgerMenu() {
@@ -33,7 +37,6 @@ menuLinks.forEach(link => {
 
 // interactivity to tabs
 
-document.addEventListener('DOMContentLoaded', () => {
     fetch('../gifts.json')
       .then(response => {
         if (!response.ok) {
@@ -115,11 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(error => {
         console.error('Ошибка при загрузке данных:', error); 
       });
-  });
+
   
   // add scroll button
 
-  document.addEventListener('DOMContentLoaded', function () {
     const scrollToTopBtn = document.querySelector('.scrollToTopBtn');
   
     window.addEventListener('scroll', function () {
@@ -136,12 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
         behavior: 'smooth' 
       });
     });
-  });
+
   
 
   // modal window
 
-  document.addEventListener('DOMContentLoaded', () => {
     fetch('../gifts.json')
       .then(response => {
         if (!response.ok) {
@@ -152,11 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(gifts => {
   
 
-        const modal = document.getElementById('modal');
-        const modalClose = document.getElementById('modal_close');
-        const modalName = document.getElementById('modal_name');
-        const modalDescription = document.getElementById('modal_description');
-        const modalSuperpowers = document.getElementById('modal_superpowers');
         
         function createCard(gift) {
           const card = document.createElement('div');
