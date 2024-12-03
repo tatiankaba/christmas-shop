@@ -213,7 +213,8 @@ menuLinks.forEach(link => {
           modal.style.display = 'block';
           modalName.textContent = gift.name;
           modalDescription.textContent = gift.description;
-          
+          document.body.style.overflow = 'hidden'; 
+
           // Очистка предыдущих суперспособностей
           modalSuperpowers.innerHTML = '';
           
@@ -223,7 +224,8 @@ menuLinks.forEach(link => {
             superpowerDiv.textContent = `${key}: ${gift.superpowers[key]}`;
             modalSuperpowers.appendChild(superpowerDiv);
           }
-  
+          document.addEventListener('DOMContentLoaded', () => {
+
           // Устанавливаем картинку для модального окна
           const imageName = `gift-${gift.category.toLowerCase().replace(/\s+/g, '-')}.png`;
           modalImg.src = `../images/${imageName}`;
@@ -232,7 +234,7 @@ menuLinks.forEach(link => {
           // Запрещаем прокрутку страницы
           document.body.classList.add('modal-open');
         }
-  
+)};
         // Закрытие модального окна
         modalClose.addEventListener('click', () => closeModal());
         modal.addEventListener('click', (e) => {
@@ -244,6 +246,7 @@ menuLinks.forEach(link => {
         function closeModal() {
           modal.style.display = 'none';
           document.body.classList.remove('modal-open');
+          document.body.style.overflow = ''; 
         }
   
         // Обработчики для вкладок
