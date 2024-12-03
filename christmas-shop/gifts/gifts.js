@@ -167,8 +167,8 @@ mediaQueryMin768.addEventListener('change', ()=> {
         const modalName = document.getElementById('modal_name');
         const modalDescription = document.getElementById('modal_description');
         const modalSuperpowers = document.getElementById('modal_superpowers');
-        const modalImg = document.getElementById('modal_img');  // Картинка в модальном окне
-        const modalImgContainer = document.getElementById('modal_img_container');  // Контейнер для картинки
+        const modalImg = document.getElementById('modal_img');  
+        const modalImgContainer = document.getElementById('modal_img_container'); 
   
         function createCard(gift) {
           const card = document.createElement('div');
@@ -202,7 +202,6 @@ mediaQueryMin768.addEventListener('change', ()=> {
           card.appendChild(imgContainer);
           card.appendChild(cardText);
   
-          // Открытие модального окна при клике на карточку
           card.addEventListener('click', () => openModal(gift));
   
           return card;
@@ -216,17 +215,14 @@ mediaQueryMin768.addEventListener('change', ()=> {
           });
         }
   
-        // Открытие модального окна
         function openModal(gift) {
           modal.style.display = 'block';
           modalName.textContent = gift.name;
           modalDescription.textContent = gift.description;
           document.body.style.overflow = 'hidden'; 
 
-          // Очистка предыдущих суперспособностей
           modalSuperpowers.innerHTML = '';
           
-          // Добавляем суперспособности
           for (let key in gift.superpowers) {
             const superpowerDiv = document.createElement('div');
             superpowerDiv.textContent = `${key}: ${gift.superpowers[key]}`;
@@ -234,16 +230,13 @@ mediaQueryMin768.addEventListener('change', ()=> {
           }
           document.addEventListener('DOMContentLoaded', () => {
 
-          // Устанавливаем картинку для модального окна
           const imageName = `gift-${gift.category.toLowerCase().replace(/\s+/g, '-')}.png`;
           modalImg.src = `../images/${imageName}`;
           modalImg.alt = `${gift.name} image`;
   
-          // Запрещаем прокрутку страницы
           document.body.classList.add('modal-open');
         }
 )};
-        // Закрытие модального окна
         modalClose.addEventListener('click', () => closeModal());
         modal.addEventListener('click', (e) => {
           if (e.target === modal) {
@@ -257,7 +250,6 @@ mediaQueryMin768.addEventListener('change', ()=> {
           document.body.style.overflow = ''; 
         }
   
-        // Обработчики для вкладок
         tabs.forEach(tab => {
           tab.addEventListener('click', function () {
             tabs.forEach(t => t.classList.remove('disable'));
