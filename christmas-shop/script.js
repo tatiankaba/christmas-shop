@@ -99,14 +99,19 @@ sliderNextBtn.addEventListener('click', slideNext);
 // timer
 
 function formatNumber(num) {
-    return num < 10 ? '0' + num : num;
+    return num;
 }
 
 function updateCountdown() {
+
+
     const now = new Date();
-    const currentTimeInUTC = new Date(now.toUTCString());
-    const targetDate = new Date(Date.UTC(new Date().getUTCFullYear() + 1, 0, 1, 0, 0, 0)); 
+    const currentTimeInUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+    const targetDate = Date.UTC(now.getUTCFullYear() + 1, 0, 1, 0, 0, 0); 
+
+
     const remainingTime = targetDate - currentTimeInUTC;
+
     const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
     const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
