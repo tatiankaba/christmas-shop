@@ -411,8 +411,8 @@ div.tab.disable {
 .superpowers {
     display: flex;
     gap: 12px;
-    align-items:center;
     margin-top: 20px;
+    justify-content: space-between;
 }
 
 .modal_name {
@@ -426,6 +426,12 @@ div.tab.disable {
 
 .power_item {
     padding-block: 4px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.68px;
+    text-align: left;
+    text-transform: capitalize;
 }
 
 .points {
@@ -435,11 +441,17 @@ div.tab.disable {
 
 .point {
     padding-block: 4px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.68px;
 }
 
 .stars {
     flex-basis: 33.9%;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .star {
@@ -447,6 +459,7 @@ div.tab.disable {
     justify-content: start;
     padding-block: 4px;
     align-items:center;
+    gap: 8px;
 }
 
 .star svg {
