@@ -149,6 +149,7 @@ function displayRandomCards(gifts) {
     const cardsContainer = document.querySelector('.cards_container');
     const randomCards = getRandomCards(gifts);
     randomCards.forEach(card => {
+        const imageCard = `gift-${card.category.toLowerCase().replace(/\s+/g, '-')}.png`;
         const cardElement = document.createElement('div');
         cardElement.classList.add('card');
         let cardTitleClass = '';
@@ -161,7 +162,7 @@ function displayRandomCards(gifts) {
         };
         cardElement.innerHTML = `
             <div class="img_container">
-                <img src="images/gift-for-work.png" alt="pic">
+                <img src="../images/${imageCard}" alt="pic">
             </div>
             <div class="card_text">
                 <h4 class="for_what ${cardTitleClass}">${card.category}</h4>
