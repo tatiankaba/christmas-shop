@@ -411,7 +411,7 @@ div.tab.disable {
 .superpowers {
     display: flex;
     margin-top: 8px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .modal_card_container h4.modal_name {
@@ -448,9 +448,15 @@ h4.modal_card_category {
     text-transform: capitalize;
 }
 
+.power {
+    flex-basis: 33.9%;
+}
+
 .points {
     text-align: right;
+    flex-grow: 1;
     flex-basis: 33.9%;
+
 }
 
 .point {

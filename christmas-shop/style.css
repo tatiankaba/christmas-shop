@@ -52,7 +52,7 @@
 .superpowers {
     display: flex;
     margin-top: 8px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .modal_card_container h4.modal_name {
@@ -75,7 +75,7 @@ h4.modal_card_category {
     margin-top: 0;
     }
 
-.powers {
+.power {
     text-align: left;
     flex-basis: 33.9%;
 }
