@@ -15,6 +15,7 @@ const sliderNextBtn =  document.querySelector('.next');
 const mediaQuery768 = window.matchMedia('(max-width: 768px)');
 const mediaQueryMin768 = window.matchMedia('(min-width: 768px)');
 
+
 //modal constants
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modal_close');
@@ -31,6 +32,16 @@ function changeBurgerMenu() {
     burgerBtn.classList.toggle('active');
     burgerMenu.classList.toggle('hidden');
     body.classList.toggle('overflow');
+    setHeaderHeight();
+}
+
+function setHeaderHeight() {
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const headerScroll = header.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const headerDynamicHeight = headerHeight + headerScroll.top;
+    burgerMenu.style.top = headerDynamicHeight + 'px'
 }
 
 burgerBtn.addEventListener('click', changeBurgerMenu);
