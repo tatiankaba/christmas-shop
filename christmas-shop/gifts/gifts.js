@@ -157,16 +157,19 @@ mediaQueryMin768.addEventListener('change', ()=> {
 
   const snowFlakes = document.querySelectorAll('.star svg');
 
+
+
+
   function createModalCard(card) {
 
     const modalCardContainer = document.querySelector('.modal_card_container')
-    const modalCardName = document.querySelector('[data-modalName="modal_card_name"]');
     const modalCardDesc = document.querySelector('[data-modalDesc="modal_card_desc"]');
     const modalPowers = document.getElementsByClassName('power_item');
     const modalPoints = document.getElementsByClassName('point');
     const modalPointsArray = Object.values(card.superpowers);
     const modalPowersArray = Object.keys(card.superpowers);
     const modalImg = document.querySelector('[data-modalImg="modal_img"]'); 
+    const modalCardName = document.querySelector('[data-modalName="modal_card_name"]');
     const modalForCategory = document.querySelector('[data-modalName="modal_card_category"]');
 
     for(let i = 0; i < modalPointsArray.length; i++) {
@@ -179,12 +182,9 @@ mediaQueryMin768.addEventListener('change', ()=> {
 
     };
 
-
-
     modalForCategory.textContent = card.category.toUpperCase();
     let modalForCategoryClass = card.category.split(' ').splice(1).join('').toLowerCase();
-    console.log(modalForCategoryClass);
-    modalForCategory.classList.add(`${modalForCategoryClass}`)
+    modalForCategory.className = `for_what ${modalForCategoryClass}`;
     modal.style.display = 'block';
     modal.style.cursorPointer = 'none';
     modalCardContainer.style.cursor = 'auto';
@@ -209,7 +209,7 @@ mediaQueryMin768.addEventListener('change', ()=> {
         closeModal();
         for (let snowFlake of snowFlakes) {
           snowFlake.style.opacity = '0.1'
-        }
+        };
       }
     });
 
@@ -224,8 +224,7 @@ mediaQueryMin768.addEventListener('change', ()=> {
     modal.style.display = 'none';
     body.style.overflow = 'auto'; 
     for (let snowFlake of snowFlakes) {
-      snowFlake.style.opacity = '0.1'
-  }};
-
-  });
+      snowFlake.style.opacity = '0.1';
+  }
+  }});
   
