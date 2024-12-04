@@ -126,9 +126,9 @@ function updateCountdown() {
 
 
     const now = new Date(); 
-    const currentTimeInUTC = new Date(now.getTime() - now.getTimezoneOffset() * 60000); 
+    const currentTimeInUTC = now - (now.getTimezoneOffset() / 60);
 
-    const targetDate = Date.UTC(now.getUTCFullYear() + 1, 0, 1, 0, 0, 0); 
+    const targetDate = new Date(Date.UTC(2025, 0, 1, 0, 0, 0));
 
 
     const remainingTime = targetDate - currentTimeInUTC;
